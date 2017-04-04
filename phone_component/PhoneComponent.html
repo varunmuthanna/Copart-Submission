@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<title>Phone Component</title>
+</head>
+<body>
+	<h1>Phone Component</h1>
+	<form class="signup">
+		<table>
+			<tr>
+				<td><label for="phonenumber">Phonenumber:</label></td>
+				<td><input type="text"  id="phoneNumber" onkeydown="myFunction()"></td>
+			</tr>
+		</table>
+	</form>
+
+<script>
+    function myFunction(){
+    var input = document.getElementById('phoneNumber');
+    var val = input.value;
+    var temp = val;
+    var size = val.length;
+        if(size == 0){
+                val = val;
+        }else if(size == 1){
+                val = '('+val;
+        }else if(size == 4){
+            val = val + ')';   
+        }else if(size == 8){
+            val = val + '-';  
+        }
+        if(temp.charAt(size-1) == '-'){
+                val = val.substring(0,size-1);
+        }
+    
+    input.value = val;
+}
+
+</script>
+
+
+</body>
+</html>
